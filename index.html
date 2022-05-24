@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Fundamentals</title>
+    <!--
+    interpreted languages, the code is run from top to bottom and the result of running the code is immediately returned
+    JavaScript is a lightweight interpreted programming language
+    -->
+    <!-- external file -->
+    <script src="./script.js" defer></script>
+    <script defer src="js/script2.js">
+        //Scripts loaded with the defer attribute will load in the order they appear on the page
+        //They won't run until the page content has all loaded
+    </script>
+    
+    <script async src="js/script3.js">
+        //async should be used when you have a bunch of background scripts to load in, 
+        //and you just want to get them in place as soon as possible
+        /*
+        1.async and defer both instruct the browser to download the script(s) in a separate thread, while the rest of the page (the DOM, etc.) is downloading, so the page loading is not blocked during the fetch process
+        */
+    </script>
+
+    <script defer src="./variables.js"></script>
+    <script defer src="./string.js"></script>
+
+</head>
+<body>
+    <p>Hello World</p>
+    <button>Click me</button>
+    <button onclick="createInlineParagraph()">Inline - Click me!</button>
+
+    <button id="button_B">Press me</button>
+    <h3 id="heading_B"></h3>
+
+</body>
+</html>
+    
+<script>
+    //Internal JavaScript
+    const para = document.querySelector('p');
+    para.addEventListener('click',updateName);
+
+    function updateName(){
+        const name = prompt("Enter a new name");
+        para.textContent = `Player 1:${name}`;
+    }
+
+    //Inline JavaScript Function
+    function createInlineParagraph() {
+      const para = document.createElement('p');
+      para.textContent = 'You clicked Inline button!';
+      document.body.appendChild(para);
+    }
+</script>
