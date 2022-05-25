@@ -42,12 +42,12 @@ console.log(output.startsWith("Score"));
 console.log(output.endsWith("Score"));
 console.log(output.indexOf("score")); //if return -1 is not available in string
 
-let mailId = "jaikumar.kumar@aspiresys.com";
+let mailId = "jaikumar@gmail.com";
 let start = mailId.indexOf("@");
 let end = mailId.indexOf(".",start);
 console.log(mailId.slice(start+1, end));    //slice(beginIndex, endIndex)
 
 console.log(mailId.toUpperCase(),mailId.toLowerCase()); 
 
-console.log(mailId.replace('k','q')); //1st value only
+console.log(mailId.replace('k','q')); //1st value only - replaceAll - all values
 
