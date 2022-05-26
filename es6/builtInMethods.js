@@ -25,3 +25,39 @@ console.log(val,ind);
 "hello".includes("ell")       // true
 "hello".includes("ell", 1)    // true
 "hello".includes("ell", 2)    // false
+
+//Number Checking
+
+Number.isNaN(42) === false
+Number.isNaN(NaN) === true
+
+Number.isFinite(Infinity) === false
+Number.isFinite(-Infinity) === false
+Number.isFinite(NaN) === false
+Number.isFinite(123) === true
+
+//safe check 
+Number.isSafeInteger(42) === true
+Number.isSafeInteger(9007199254740992) === false
+
+//compare
+x = 0.2;
+y = 0.3;
+z = 0.1;
+equal = (Math.abs(x - y + z) < Number.EPSILON);
+
+console.log(0.1 + 0.2 === 0.3) // false
+console.log(Math.abs((0.1 + 0.2) - 0.3) < Number.EPSILON)  // true
+
+//trunc
+console.log(Math.trunc(42.7)) // 42
+console.log(Math.trunc( 0.1)) // 0
+console.log(Math.trunc(-0.1)) // -0
+
+
+//Sign determination
+console.log(Math.sign(7))   // 1
+console.log(Math.sign(0))   // 0
+console.log(Math.sign(-0))  // -0
+console.log(Math.sign(-7))  // -1
+console.log(Math.sign(NaN)) // NaN
